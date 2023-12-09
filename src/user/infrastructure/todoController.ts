@@ -13,10 +13,12 @@ app.get("/todo", (_req: Request, res: Response) => {
 });
 
 app.post("/todo", (req: Request, res: Response) => {
-  const newTask = todo.create(req.body);
-  res.status(201).json(newTask);
-
-  res.status(400).json({ error: "Bad request" });
+  try {
+    const newTask = todo.create(req.body);
+    res.status(201).json(newTask);
+  } catch (error) {
+    res.status(400).json({ error: "Bad request" });
+  }
 });
 
 app.put("/todo/:id", async (req: Request, res: Response) => {
