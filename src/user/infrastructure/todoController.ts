@@ -1,8 +1,9 @@
 import express, { Request, Response } from "express";
-
+// import expressPromiseRouter from "express-promise-router";
 import { TodoService } from "../application/todoService";
 
 const app = express();
+// const router = expressPromiseRouter();
 app.use(express.json());
 
 const todo = new TodoService();
@@ -12,7 +13,7 @@ app.get("/todo", (_req: Request, res: Response) => {
   res.status(200).json(allTasks);
 });
 
-app.post("/todo", (req: Request, res: Response) => {
+app.post("/todo", async (req: Request, res: Response) => {
   try {
     const newTask = todo.create(req.body);
     res.status(201).json(newTask);
