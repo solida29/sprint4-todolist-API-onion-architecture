@@ -35,11 +35,21 @@ app.delete("/todo/:id", async (req: Request, res: Response) => {
   const taskId = +req.params.id;
   try {
     const removedTask = todoList[taskId - 1].remove();
-    await res.status(204).json(removedTask);
+    res.status(204).json(removedTask);
   } catch (error) {
     res.status(400).json({ error: "Bad request" });
   }
 });
+
+// app.patch("/todo/:id", async (req: Request, res: Response) => {
+//   const taskId = +req.params.id;
+//   try {
+//     const removedTask = todoList[taskId - 1].update();
+//     await res.status(204).json(removedTask);
+//   } catch (error) {
+//     res.status(400).json({ error: "Bad request" });
+//   }
+// });
 
 const PORT = 3000;
 

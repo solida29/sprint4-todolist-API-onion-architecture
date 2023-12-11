@@ -2,7 +2,7 @@ import { todoList } from "../infrastructure/todoListArray";
 import { Task } from "../domain/entities/task";
 import { IService } from "../domain/repositories/todoRepository";
 
-export class TodoService extends Task {
+export class TodoService extends Task implements IService {
   constructor(id: number, title: string, completed: boolean) {
     super(id, title, completed);
     this.id = this.generateId();
@@ -23,17 +23,30 @@ export class TodoService extends Task {
     }
   }
 
-  showTask(): string {
-    return this.title;
-  }
+  // showTask(): string {
+  //   return this.title;
+  // }
 
   show(): Task[] {
     return todoList;
-  }
+  } // metodo creado pero no sirve
 
   generateId(): number {
     return todoList.length + 1;
   }
+
+  // update(): void {
+  //   const oldTask = todoList.find((task) => task.id === this.id);
+  //   if (!oldTask) {
+  //     throw new Error(`Task with id ${this.id} is not found`);
+  //   }
+  //   if (this.title !== undefined) {
+  //     oldTask.title = todoList[this.id].title;
+  //   }
+  //   if (this.completed !== undefined) {
+  //     oldTask.completed = todoList[this.id].completed;
+  //   }
+  // }
 }
 
 // export class TodoService implements Service {
