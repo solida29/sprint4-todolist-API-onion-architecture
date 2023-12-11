@@ -1,21 +1,20 @@
 import express, { Request, Response } from "express";
 // import expressPromiseRouter from "express-promise-router";
 import { TodoService } from "../application/todoService";
+import { todoList } from "./todoListArray";
 
 const app = express();
 // const router = expressPromiseRouter();
 app.use(express.json());
 
-const todo = new TodoService();
-
-app.get("/todo", (_req: Request, res: Response) => {
-  const allTasks = todo.show();
-  res.status(200).json(allTasks);
+app.get("/todo", (req: Request, res: Response) => {
+  res.status(200).json(todoList);
 });
 
 app.post("/todo", async (req: Request, res: Response) => {
+  const todo = new TodoService(req.body.id, req.body.title, req.body.completed);
   try {
-    const newTask = todo.create(req.body);
+    const newTask = todo.create();
     res.status(201).json(newTask);
   } catch (error) {
     res.status(400).json({ error: "Bad request" });
@@ -23,10 +22,10 @@ app.post("/todo", async (req: Request, res: Response) => {
 });
 
 app.put("/todo/:id", async (req: Request, res: Response) => {
-  const taskId = +req.params.id; // const taskId = parseInt(req.params.id, 10)
+  const taskId = +req.params.id; // const taskId = parseInt(req.params.id, 10) // const taskId = Number(req.params.id)
   try {
-    const updatedTask = todo.update(taskId, req.body.title, req.body.completed);
-    await res.status(200).json(updatedTask);
+    const updatedTask = todoList[taskId - 1].toggle();
+    res.status(200).json(updatedTask);
   } catch (error) {
     res.status(400).json({ error: "Bad request" });
   }
@@ -35,7 +34,7 @@ app.put("/todo/:id", async (req: Request, res: Response) => {
 app.delete("/todo/:id", async (req: Request, res: Response) => {
   const taskId = +req.params.id;
   try {
-    const removedTask = todo.remove(taskId);
+    const removedTask = todoList[taskId - 1].remove();
     await res.status(204).json(removedTask);
   } catch (error) {
     res.status(400).json({ error: "Bad request" });

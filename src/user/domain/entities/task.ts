@@ -1,40 +1,45 @@
-export interface Task {
+// export interface ITask {
+//   id: number;
+//   title: string;
+//   completed: boolean;
+// }
+
+//-------- TODO ITEM -------
+// let list: Task[] = [];
+
+export class Task {
   id: number;
   title: string;
   completed: boolean;
+
+  constructor(id: number, title: string, completed: boolean) {
+    this.id = id;
+    this.title = title;
+    this.completed = false;
+  }
+
+  // add() {
+  //   list.push(this);
+  // }
+
+  // toggle() {
+  //   this.completed = !this.completed;
+  // }
+
+  // delete() {
+  //   list = list.filter((element) => element.title !== this.title);
+  // }
+
+  // showTask() {
+  //   return this.title;
+  // }
+
+  // showList() {
+  //   let print: string = "";
+  //   for (let i = 0; i < list.length; i++) {
+  //     print +=
+  //       list[i].title + ": " + (list[i].completed ? "done" : "to do") + "\n";
+  //   }
+  //   return print;
+  // }
 }
-
-//-------- TODO ITEM -------
-// let list: Todo[] = [];
-
-// class Todo {
-//     task: string;
-//     completed: boolean;
-
-//     constructor(task: string, completed: boolean) {
-//         this.task = task;
-//         this.completed = false;
-//     }
-//     add() {
-//         list.push(this)
-//     }
-
-//     toggle() {
-//         this.completed = !this.completed;
-//     }
-
-//     delete() {
-//         list = list.filter((element) => element.task !== this.task);
-//     }
-
-//     showTask() {
-//         return this.task;
-//     }
-
-//     showList() {
-//         let print: string = '';
-//         for (let i = 0; i < list.length; i++) {
-//             print += list[i].task + ': ' + (list[i].completed  ? 'done' : 'to do') + '\n';
-//         }
-//         return print;
-//     }

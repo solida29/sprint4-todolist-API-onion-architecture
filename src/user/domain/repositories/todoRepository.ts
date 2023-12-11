@@ -1,8 +1,8 @@
 import { Task } from "../entities/task";
 
-export interface Service {
+export interface IService {
   show(): Task[];
-  create(task: Task): Task;
-  update(id: number, title?: string, completed?: boolean): void;
-  remove(id: number): void;
+  create(): void;
+  toggle(): void;
+  remove(): void;
 }

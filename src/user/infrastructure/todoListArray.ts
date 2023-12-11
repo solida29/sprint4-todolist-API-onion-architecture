@@ -1,3 +1,4 @@
 import { Task } from "../domain/entities/task";
+import { TodoService } from "../application/todoService";
 
-export let todoList: Task[];
+export let todoList: TodoService[] = [];
