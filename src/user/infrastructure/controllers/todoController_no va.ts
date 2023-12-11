@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 // import expressPromiseRouter from "express-promise-router";
-import { TodoService } from "../application/todoService";
-import { todoList } from "./todoListArray";
+import { TodoService } from "../../application/todoService";
+import { todoList } from "../todoListArray";
 
 const app = express();
 // const router = expressPromiseRouter();
@@ -22,7 +22,7 @@ app.post("/todo", async (req: Request, res: Response) => {
 });
 
 app.put("/todo/:id", async (req: Request, res: Response) => {
-  const taskId = +req.params.id; // const taskId = parseInt(req.params.id, 10) // const taskId = Number(req.params.id)
+  const taskId = +req.params.id; // const taskId = parseInt(req.params.id, 10) o const taskId = Number(req.params.id)
   try {
     const updatedTask = todoList[taskId - 1].toggle();
     res.status(200).json(updatedTask);
@@ -41,6 +41,7 @@ app.delete("/todo/:id", async (req: Request, res: Response) => {
   }
 });
 
+//---------- NO FUNCIONA ---------
 // app.patch("/todo/:id", async (req: Request, res: Response) => {
 //   const taskId = +req.params.id;
 //   try {

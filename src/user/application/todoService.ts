@@ -23,18 +23,19 @@ export class TodoService extends Task implements IService {
     }
   }
 
-  // showTask(): string {
-  //   return this.title;
-  // }
+  showTask(): string {
+    return this.title;
+  } // metodo creado pero no usado
 
   show(): Task[] {
     return todoList;
-  } // metodo creado pero no sirve
+  } // metodo creado pero no usado
 
   generateId(): number {
     return todoList.length + 1;
   }
 
+  //---------- NO FUNCIONA ---------
   // update(): void {
   //   const oldTask = todoList.find((task) => task.id === this.id);
   //   if (!oldTask) {
