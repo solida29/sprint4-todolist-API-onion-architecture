@@ -114,3 +114,27 @@ Está esl middleware Cache-control: no-cache y el CORS en el servidor
 ## Nivel 3
 
 ...
+
+## Unión arquitectura
+
+Aquí la aquitectura del código según Union Architecture
+
+```
+src/
+├── backend
+│   ├── middlewares
+│   └── serverExpress.ts
+├── application
+│    └── todoService.ts
+├── domain
+│   ├── entities
+│   │    └── task.ts
+│   └── repositories
+│   │    └── todoRepository.ts
+└── infrastructure
+    ├── controllers
+    │    └── todoControllers.ts
+    ├── routes
+    │    └── todoRoutes.ts
+    └──todoListArray.ts
+```
