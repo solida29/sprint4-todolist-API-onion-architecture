@@ -103,7 +103,7 @@ Y nos genera una tarea con:
 [
   {
     "id": 1,
-    "title": "hello",
+    "title": "tarea 1",
     "completed": false
   }
 ]
@@ -121,7 +121,7 @@ Tendríamos:
 [
   {
     "id": 1,
-    "title": "hello",
+    "title": "tarea 1",
     "completed": true
   }
 ]
