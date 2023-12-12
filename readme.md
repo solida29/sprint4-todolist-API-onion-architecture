@@ -46,4 +46,4 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 ## Nivel 1
 
-Implementación de la Arquitectura Hexagonal o Clean Architecture y comprobaciones con Postman.
+Implementación de Union Architecture o Clean Architecture y comprobaciones con ThunderClient.

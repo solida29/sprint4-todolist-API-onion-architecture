@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-const noCacheMiddleware = (
+export const noCacheMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
