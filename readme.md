@@ -59,3 +59,8 @@ npm run start-server
 ```bash
    http://localhost:8000/todo
 ```
+
+Y podemos probar los metodos GET, POST, PUT y DELETE:
+
+- GET: para leer todas las tareas
+- POST:

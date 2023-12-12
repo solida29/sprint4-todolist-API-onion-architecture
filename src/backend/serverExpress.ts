@@ -1,5 +1,5 @@
 import express from "express";
-import { router } from "../user/infrastructure/routes/todoRoutes";
+import { router } from "../infrastructure/routes/todoRoutes";
 import { noCacheMiddleware } from "./middleware/middleware-nocache";
 import cors from "cors";
 import helmet from "helmet";
