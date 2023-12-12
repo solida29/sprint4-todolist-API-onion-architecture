@@ -46,4 +46,16 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 ## Nivel 1
 
-Implementación de Union Architecture o Clean Architecture y comprobaciones con ThunderClient.
+Creación de una una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
+
+1. Levantamos el servidor en localhost: 8000
+
+```bash
+npm run start-server
+```
+
+2. Ejecutamos la API en Thunder Client
+
+```bash
+   http://localhost:8000/todo
+```
