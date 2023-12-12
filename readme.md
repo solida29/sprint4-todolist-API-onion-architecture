@@ -48,7 +48,7 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 Creación de una una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
 
-1. Levantamos el servidor en localhost: 8000
+1. Levantamos el servidor src/backend/serverExpress.ts en localhost: 8000
 
 ```bash
 npm run start-server
