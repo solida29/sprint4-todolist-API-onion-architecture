@@ -63,4 +63,54 @@ npm run start-server
 Y podemos probar los metodos GET, POST, PUT y DELETE:
 
 - GET: para leer todas las tareas
-- POST:
+- POST: para subir tareas introducimos solo el campo "title":
+
+```bash
+{
+  "title": "tarea 1"
+}
+```
+
+Y nos genera una tarea con:
+
+```sh
+[
+  {
+    "id": 1,
+    "title": "hello",
+    "completed": false
+  }
+]
+```
+
+- PUT: nos permite pasar la tareda designada por id en el path a true o false según su estado (toggle)
+
+```sh
+http://localhost:8000/todo/1
+```
+
+Tendríamos:
+
+```sh
+[
+  {
+    "id": 1,
+    "title": "hello",
+    "completed": true
+  }
+]
+```
+
+- DELETE: nos permite borrar la tareda designada por id:
+
+```sh
+http://localhost:8000/todo/1
+```
+
+## Nivell 2
+
+Está esl middleware Cache-control: no-cache y el CORS en el servidor
+
+## Nivel 3
+
+...
