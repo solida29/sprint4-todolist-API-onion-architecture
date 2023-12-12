@@ -46,6 +46,8 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 ## Unión arquitectura
 
+Creación de una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
+
 Aquí la aquitectura del código según Union Architecture
 
 ```
@@ -70,7 +72,7 @@ src/
 
 ## Nivel 1
 
-Creación de una una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
+Comprobación en Thunder Client
 
 1. Levantamos el servidor src/backend/serverExpress.ts en localhost: 8000
 
