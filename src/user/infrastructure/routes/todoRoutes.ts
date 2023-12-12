@@ -4,11 +4,11 @@ import {
   createTask,
   updateTask,
   deleteTask,
-} from "../controllers/todocontrollers";
+} from "../controllers/todoControllers";
 
 export const router = express.Router();
 
-router.get("/todo", getAll);
-router.post("/todo", createTask);
-router.put("/todo/:id", updateTask);
-router.delete("/todo/:id", deleteTask);
+router.get("/", getAll);
+router.post("/", createTask);
+router.put("/:id", updateTask);
+router.delete("/:id", deleteTask);
