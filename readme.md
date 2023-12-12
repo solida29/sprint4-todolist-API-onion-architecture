@@ -44,6 +44,30 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 <hr>
 
+## Unión arquitectura
+
+Aquí la aquitectura del código según Union Architecture
+
+```
+src/
+├── backend
+│   ├── middlewares
+│   └── serverExpress.ts
+├── application
+│    └── todoService.ts
+├── domain
+│   ├── entities
+│   │    └── task.ts
+│   └── repositories
+│   │    └── todoRepository.ts
+└── infrastructure
+    ├── controllers
+    │    └── todoControllers.ts
+    ├── routes
+    │    └── todoRoutes.ts
+    └──todoListArray.ts
+```
+
 ## Nivel 1
 
 Creación de una una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
@@ -114,27 +138,3 @@ Está esl middleware Cache-control: no-cache y el CORS en el servidor
 ## Nivel 3
 
 ...
-
-## Unión arquitectura
-
-Aquí la aquitectura del código según Union Architecture
-
-```
-src/
-├── backend
-│   ├── middlewares
-│   └── serverExpress.ts
-├── application
-│    └── todoService.ts
-├── domain
-│   ├── entities
-│   │    └── task.ts
-│   └── repositories
-│   │    └── todoRepository.ts
-└── infrastructure
-    ├── controllers
-    │    └── todoControllers.ts
-    ├── routes
-    │    └── todoRoutes.ts
-    └──todoListArray.ts
-```
