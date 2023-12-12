@@ -1,141 +1,49 @@
-# 🦋 TypeScript TDD Template
+# Entrega 4.1: Node REST Service
 
-⚡ Start your Node.js project with Typescript using Test Driven Development (TDD) practices.
+## Objectius
 
-### 📋 GitHub Actions Workflow:
+Aprendre a implementar un servidor amb Express.js per a l'API REST.
 
-[![🏠 Build](https://github.com/AraManjon/typescript-tdd-template/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/AraManjon/typescript-tdd-template/actions/workflows/build.yml)
+## Durada: 10 dies
 
-This GitHub Actions workflow automatically builds and tests the application when code changes are pushed to the master branch or a pull request targeting the master branch is opened or synchronized.
+## Lliurament:
 
-### 📥 Installation
+- Crea un sol repositori per a l'exercici, i envia l'URL perquè sigui revisat.
 
-To get started with this template, you first need to clone the repository:
+- Documentar l'API de manera clara i concisa, incloent informació sobre les rutes, els paràmetres i les respostes esperades.
 
-```bash
-git clone https://github.com/AraManjon/typescript-tdd-template.git
-```
+- Fes ús de CI (Integració Continua) amb GitHub actions.
 
-Then, install the project dependencies:
+- S'ha de treballar sobre el teu propi repositori, en un projecte clonat del projecte typescript-tdd-template. El lliurament es farà mitjançant pull-request al propi repositori.
 
-```bash
-npm install
-```
+## Descripció
 
-### 🏁 How To Start
+En aquesta entrega crearem un servidor utilitzant Express.js, per proporcionar servei a l'API REST de la llista de tasques (TODO-LIST), aplicant l'arquitectura hexagonal. Implementarem les funcionalitats següents:
 
-To start the server in development mode, run the following script:
-```bash
-npm run dev
-```
-Then, open http://localhost:8000 to access the server.
+- Afegir una tasca a la llista: Implementarem una ruta i un controlador per permetre als usuaris afegir noves tasques a la seva llista.
 
+- Marcar una tasca com a completada: Crearem una ruta i un controlador per a permetre als usuaris marcar una tasca com a completada.
 
-### 🚀 Production
+- Eliminar una tasca de la llista: Implementarem una funcionalitat per eliminar tasques de la llista utilitzant una ruta i un controlador adequats.
 
-To run the server in production mode, first build the TypeScript code into JavaScript by running:
+- Mostrar la llista de tasques: Crearem una ruta i un controlador per obtenir i mostrar la llista completa de tasques als usuaris.
 
-```bash
-npm run build
-```
+## Nivell 1
 
-This will generate the dist directory with the compiled JavaScript files.
+Documenta i adjunta les comprovacions amb una plataforma com Postman o Insomnia al teu projecte.
 
-Then, start the server by running:
+## Nivell 2
 
-```bash
-npm start
-```
+- Inclou un middleware que afegeixi la capçalera Cache-control: no-cache. Habiliti CORS (Cross-Origin Resource Sharing) en les respostes, sigui mitjançant Express o mitjançant un altre middleware.
 
-This will start the server and make it available at http://localhost:8000.
+- Afegeix un middleware retorni un HTTP Status 401 - Unauthorized si la capçalera de la petició no conté autenticació bàsica (usuari/ària i contrasenya).
 
+## Nivell 3
 
-### 🏗️ Scripts
-This project comes with several predefined scripts in the package.json file:
+Afegeix testing per comprovar el correcte funcionament de cadascun.
 
-```test```: Runs tests using Jest.
+<hr>
 
-```lint```: Runs ESLint to check code quality.
+## Nivel 1
 
-```lint:fix```: Runs ESLint to fix code style issues.
-
-```dev```: Starts the development server with ts-node-dev and allows debugging
-
-```build```: Removes the ./dist folder and compiles the TypeScript code into JavaScript in the ./dist folder.
-
-```start```: Starts the server in production using the compiled files in the dist/ folder.
-
-### 📝 Dependencies
-
-- cors: middleware for handling Cross-Origin Resource Sharing (CORS)
-
-- dotenv: loads environment variables from a .env file
-
-- express: web framework for Node.js
-
-- express-promise-router: promise-based router for Express
-
-- helmet: middleware for adding security headers
-
-- mongodb: driver for MongoDB
-
-- mysql2: MySQL client for Node.js
-
-### 🛠️ Dev Dependencies
-
-- @types/cors: TypeScript definitions for cors
-
-- @types/express: TypeScript definitions for express
-
-- @types/jest: TypeScript definitions for jest
-
-- @types/mysql: TypeScript definitions for mysql
-
-- eslint: linter for TypeScript
-
-- eslint-config-codely: ESLint configuration used by CodelyTV
-
-- mysql: MySQL driver for Node.js
-
-- rimraf: cross-platform tool for removing files and directories
-
-- ts-jest: TypeScript preprocessor for Jest
-
-- ts-node-dev: TypeScript execution and development environment for Node.js
-
-- tsc-watch: TypeScript compiler with file watching
-
-### 🗂️ Folder structure
-
-In this folder structure, the code is organized according to the principles of Hexagonal Architecture. 
-
-```
-src/
-├── backend
-│   ├── middlewares
-│   ├── App.ts
-│   ├── server.start.ts
-│   └── Server.ts
-├── shared
-│   ├── utils
-│   ├── domain
-│   └── infrastructure
-│       ├── config
-│       └── persistence
-└── user
-    ├── application
-    │   ├── services
-    │   └── use-cases
-    ├── domain
-    │   ├── entities
-    │   └── repositories
-    └── infrastructure
-        ├── controllers
-        ├── repositories
-        ├── routes
-        ├── services
-        └── UserModule.ts
-```
-
-
-
+Implementación de la Arquitectura Hexagonal o Clean Architecture y comprobaciones con Postman.
