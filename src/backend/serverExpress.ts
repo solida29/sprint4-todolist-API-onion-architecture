@@ -3,6 +3,7 @@ import { router } from "../infrastructure/routes/todoRoutes";
 import { noCacheMiddleware } from "./middleware/middleware-nocache";
 import cors from "cors";
 import helmet from "helmet";
+import "./load-environments";
 
 const app = express();
 const PORT = process.env.PORT ?? "8000";
