@@ -46,7 +46,7 @@ Afegeix testing per comprovar el correcte funcionament de cadascun.
 
 ## Unión arquitectura
 
-Creación de una Todo List en una API REST con una implementación de Union Architecture o Clean Code y comprobaciones con ThunderClient.
+Creación de una Todo List en una API REST con una implementación de Union Architecture o Clean architecture y comprobaciones con ThunderClient.
 
 Aquí la aquitectura del código según Union Architecture
 
@@ -54,6 +54,9 @@ Aquí la aquitectura del código según Union Architecture
 src/
 ├── backend
 │   ├── middlewares
+│   │    ├── middleware-authentication.ts
+│   │    └── middleware-basicAuth.ts
+│   ├── load-environments.ts
 │   └── serverExpress.ts
 ├── application
 │    └── todoService.ts
@@ -135,7 +138,11 @@ http://localhost:8000/todo/1
 
 ## Nivell 2
 
-Está esl middleware Cache-control: no-cache y el CORS en el servidor
+- Está el middleware Cache-control: no-cache y el CORS en el servidor.
+
+- Está hecho el middleware JSON web Token con pero falta implemetarlo en las routes/todoRoutes.ts y en el server
+
+- Está también una authentication Basic sin acabar de implementar y testear, en routes/todoRoutes.ts y en el server, ligado al .env-example para password y username
 
 ## Nivel 3
 

@@ -3,14 +3,14 @@ import { router } from "../infrastructure/routes/todoRoutes";
 import { noCacheMiddleware } from "./middleware/middleware-nocache";
 import cors from "cors";
 import helmet from "helmet";
-import "./load-environments";
+import "./load-environments"; // importamos el aviso que usamos variables de entorno
 
 const app = express();
-const PORT = process.env.PORT ?? "8000";
+const PORT = process.env.PORT ?? "8000"; //se usa o el archivo del process.env o el 8000
 app.use(helmet());
-app.use(cors());
+app.use(cors()); // se usa el CORS
+app.use(noCacheMiddleware); // usamos el middleware No-Cache
 app.use(express.json());
-app.use(noCacheMiddleware);
 app.use("/todo", router);
 
 app.listen(PORT, () => {
