@@ -73,6 +73,12 @@ src/
     └──todoListArray.ts
 ```
 
+El primer paso es instalar las dependencias para poder usar el programa:
+
+```sh
+npm install
+```
+
 ## Nivel 1
 
 Comprobación en Thunder Client
